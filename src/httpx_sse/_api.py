@@ -17,7 +17,8 @@ class EventSource:
         if content_type != "text/event-stream":
             raise SSEError(
                 "Expected response Content-Type to be 'text/event-stream', "
-                f"got {content_type!r}"
+                f"got {content_type!r}",
+                response=self._response,
             )
 
     @property
